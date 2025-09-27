@@ -1,6 +1,6 @@
 /* Planes.css */
 .planes-container {
-  max-width: 1200px;
+  width: 100vw;
   margin: 0 auto;
   padding: 2rem;
 }
@@ -17,6 +17,7 @@
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   align-items: start;
+  
 }
 
 .plan-card {
