@@ -30,7 +30,12 @@ function Home() {
     <>
       {/* Hero Section */}
       <section className="hero-section">
-        <h1 className="hero-title">Sitios web profesionales para tu negocio</h1>
+        <h1
+          className="hero-title"
+          data-text="Sitios web profesionales para tu negocio"
+        >
+          Sitios web profesionales para tu negocio
+        </h1>
         <p className="hero-subtitle">
           Diseño moderno, rápido y optimizado para que tu empresa destaque.
         </p>
@@ -55,7 +60,9 @@ function Home() {
       {/* Features Section */}
       <section className="features-section">
         <div className="features-header">
-          <h2 className="section-title">¿Por qué elegir Zentpiper?</h2>
+          <h2 className="section-title" data-text="¿Por qué elegir Zentpiper?">
+            ¿Por qué elegir Zentpiper?
+          </h2>
           <p className="section-subtitle">
             Transformamos tu visión en una presencia digital poderosa que
             impulsa tu negocio
@@ -152,7 +159,9 @@ function Home() {
             <div key={i} className="triangle"></div>
           ))}
         </div>
-        <h2 className="cta-title">¿Listo para comenzar?</h2>
+        <h2 className="cta-title" data-text="¿Listo para comenzar?">
+          ¿Listo para comenzar?
+        </h2>
         <p className="cta-description">
           Contáctanos hoy mismo para una consulta gratuita
         </p>

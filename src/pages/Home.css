@@ -1,11 +1,13 @@
 /* Home.css */
 /* Optimizaciones de rendimiento */
-* {
-  -webkit-transform: translateZ(0);
-  -moz-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  -o-transform: translateZ(0);
+.hero-section,
+.features-section,
+.cta-section {
   transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+  perspective: 1000px;
 }
 
 /* Reducir motion para usuarios que lo prefieren */
@@ -334,15 +336,20 @@
 
 /* Optimización para móviles - reducir triángulos */
 @media (max-width: 768px) {
-  .cta-section .triangle:nth-child(n+19) {
+  .cta-section .triangle:nth-child(n+13) {
     display: none;
   }
   
   .cta-section .triangle {
-    border-left: 20px solid transparent;
-    border-right: 20px solid transparent;
-    border-bottom: 35px solid rgba(255, 215, 0, 0.1);
-    transition: transform 0.4s ease;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 26px solid rgba(255, 215, 0, 0.08);
+    transition: transform 0.3s ease;
+  }
+  
+  /* Simplificar hover en móviles */
+  .cta-section:hover .triangle {
+    transform: rotate(90deg);
   }
 }
 
@@ -542,11 +549,28 @@
     transform: translateY(-2px);
   }
   
-  /* Reducir efectos de glow en móviles */
+  /* Desactivar backdrop-filter en móviles */
+  .feature-card {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  
+  /* Simplificar gradientes en móviles */
+  .features-section::before,
+  .cta-section::before {
+    display: none;
+  }
+  
+  /* Glow más fuerte para móviles */
   .hero-title,
   .section-title,
   .cta-title {
-    text-shadow: 0 0 10px rgba(255, 193, 7, 0.2);
+    text-shadow: 
+      0 0 5px rgba(255, 193, 7, 0.8),
+      0 0 10px rgba(255, 193, 7, 0.6),
+      0 0 15px rgba(255, 193, 7, 0.4),
+      0 0 20px rgba(255, 193, 7, 0.2);
+    filter: drop-shadow(0 0 8px rgba(255, 193, 7, 0.5));
   }
 }
 
