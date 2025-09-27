@@ -1,4 +1,24 @@
 /* Home.css */
+/* Optimizaciones de rendimiento */
+* {
+  -webkit-transform: translateZ(0);
+  -moz-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  -o-transform: translateZ(0);
+  transform: translateZ(0);
+}
+
+/* Reducir motion para usuarios que lo prefieren */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* Hero Section */
 .hero-section {
   padding: 5rem 2rem;
@@ -13,6 +33,8 @@
   color: var(--accent-color);
   text-shadow: 0 0 20px rgba(255, 193, 7, 0.3);
   line-height: 1.2;
+  font-weight: 800;
+  font-family: 'Inter', sans-serif;
 }
 
 .hero-subtitle {
@@ -49,6 +71,7 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  will-change: transform;
 }
 
 .btn-hero::before {
@@ -140,6 +163,8 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
 }
 
 .section-subtitle {
@@ -171,6 +196,7 @@
   position: relative;
   overflow: hidden;
   backdrop-filter: blur(10px);
+  will-change: transform;
 }
 
 .feature-card::before {
@@ -299,10 +325,25 @@
   border-right: 25px solid transparent;
   border-bottom: 43px solid rgba(255, 215, 0, 0.15);
   transition: transform 0.6s ease;
+  will-change: transform;
 }
 
 .cta-section:hover .triangle {
   transform: rotate(180deg);
+}
+
+/* Optimización para móviles - reducir triángulos */
+@media (max-width: 768px) {
+  .cta-section .triangle:nth-child(n+19) {
+    display: none;
+  }
+  
+  .cta-section .triangle {
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 35px solid rgba(255, 215, 0, 0.1);
+    transition: transform 0.4s ease;
+  }
 }
 
 /* Posicionamiento de triángulos en patrón */
@@ -483,6 +524,29 @@
   .btn-cta {
     padding: 1rem 2rem;
     font-size: 1rem;
+  }
+  
+  /* Optimizaciones de rendimiento para móviles */
+  .feature-card::after,
+  .btn-hero::before,
+  .btn-cta::before {
+    display: none;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .btn-hero:hover,
+  .btn-cta:hover {
+    transform: translateY(-2px);
+  }
+  
+  /* Reducir efectos de glow en móviles */
+  .hero-title,
+  .section-title,
+  .cta-title {
+    text-shadow: 0 0 10px rgba(255, 193, 7, 0.2);
   }
 }
 
