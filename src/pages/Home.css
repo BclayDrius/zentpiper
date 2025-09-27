@@ -10,6 +10,25 @@
   perspective: 1000px;
 }
 
+/* Optimización de scroll */
+@media (max-width: 768px) {
+  .hero-section,
+  .features-section,
+  .cta-section {
+    contain: layout style paint;
+    content-visibility: auto;
+  }
+  
+  /* Reducir complejidad de animaciones */
+  .feature-icon {
+    transition: transform 0.2s ease;
+  }
+  
+  .feature-card:hover .feature-icon {
+    transform: scale(1.1);
+  }
+}
+
 /* Reducir motion para usuarios que lo prefieren */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -94,6 +113,14 @@
 .btn-hero:hover {
   transform: translateY(-3px) scale(1.05);
   box-shadow: 0 12px 35px rgba(255, 193, 7, 0.4);
+}
+
+/* Optimización hover para móviles */
+@media (max-width: 768px) {
+  .btn-hero:hover {
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(255, 193, 7, 0.3);
+  }
 }
 
 .btn-hero .arrow {
@@ -246,6 +273,81 @@
   margin-bottom: 1.5rem;
   display: block;
   transition: all 0.3s ease;
+  color: var(--accent-color);
+}
+
+.feature-icon i {
+  display: block;
+  background: linear-gradient(135deg, var(--accent-color), #e6b000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 8px rgba(255, 193, 7, 0.3));
+}
+
+/* Colores específicos para cada icono */
+.feature-card:nth-child(1) .feature-icon i {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 8px rgba(255, 107, 107, 0.3));
+}
+
+.feature-card:nth-child(2) .feature-icon i {
+  background: linear-gradient(135deg, #4ecdc4, #44a08d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 8px rgba(78, 205, 196, 0.3));
+}
+
+.feature-card:nth-child(3) .feature-icon i {
+  background: linear-gradient(135deg, #45b7d1, #3498db);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 8px rgba(69, 183, 209, 0.3));
+}
+
+.feature-card:nth-child(4) .feature-icon i {
+  background: linear-gradient(135deg, #96ceb4, #85c1a3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 8px rgba(150, 206, 180, 0.3));
+}
+
+.feature-card:nth-child(5) .feature-icon i {
+  background: linear-gradient(135deg, #feca57, #ff9ff3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 8px rgba(254, 202, 87, 0.3));
+}
+
+.feature-card:nth-child(6) .feature-icon i {
+  background: linear-gradient(135deg, #a8e6cf, #88d8a3);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 8px rgba(168, 230, 207, 0.3));
+}
+
+.feature-card:nth-child(7) .feature-icon i {
+  background: linear-gradient(135deg, #ff8a80, #ff5722);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 8px rgba(255, 138, 128, 0.3));
+}
+
+.feature-card:nth-child(8) .feature-icon i {
+  background: linear-gradient(135deg, #81c784, #66bb6a);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 8px rgba(129, 199, 132, 0.3));
 }
 
 .feature-card:hover .feature-icon {
@@ -336,20 +438,27 @@
 
 /* Optimización para móviles - reducir triángulos */
 @media (max-width: 768px) {
-  .cta-section .triangle:nth-child(n+13) {
+  .cta-section .triangle:nth-child(n+9) {
     display: none;
   }
   
   .cta-section .triangle {
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-bottom: 26px solid rgba(255, 215, 0, 0.08);
-    transition: transform 0.3s ease;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 20px solid rgba(255, 215, 0, 0.06);
+    transition: transform 0.2s ease;
+    contain: layout;
   }
   
   /* Simplificar hover en móviles */
   .cta-section:hover .triangle {
     transform: rotate(90deg);
+  }
+  
+  /* Lazy loading para triángulos */
+  .triangle-pattern {
+    content-visibility: auto;
+    contain-intrinsic-size: 100% 100%;
   }
 }
 
@@ -396,15 +505,24 @@
 
 /* Variaciones de delay para efecto escalonado */
 .cta-section .triangle:nth-child(odd) {
-  transition-delay: 0.1s;
+  transition-delay: 0.05s;
 }
 
 .cta-section .triangle:nth-child(even) {
-  transition-delay: 0.2s;
+  transition-delay: 0.1s;
 }
 
 .cta-section .triangle:nth-child(3n) {
-  transition-delay: 0.3s;
+  transition-delay: 0.15s;
+}
+
+/* Optimización adicional para móviles */
+@media (max-width: 768px) {
+  .cta-section .triangle:nth-child(odd),
+  .cta-section .triangle:nth-child(even),
+  .cta-section .triangle:nth-child(3n) {
+    transition-delay: 0s;
+  }
 }
 
 .cta-title {
@@ -561,16 +679,32 @@
     display: none;
   }
   
-  /* Glow más fuerte para móviles */
+  /* Simplificar backgrounds complejos */
+  .hero-section,
+  .features-section,
+  .cta-section {
+    background: var(--bg-color);
+  }
+  
+  .feature-card {
+    background: rgba(30, 30, 30, 0.95);
+  }
+  
+  /* Optimizar transiciones */
+  .feature-card,
+  .btn-hero,
+  .btn-cta {
+    transition-duration: 0.2s;
+  }
+  
+  /* Glow equilibrado para móviles */
   .hero-title,
   .section-title,
   .cta-title {
     text-shadow: 
-      0 0 5px rgba(255, 193, 7, 0.8),
-      0 0 10px rgba(255, 193, 7, 0.6),
-      0 0 15px rgba(255, 193, 7, 0.4),
-      0 0 20px rgba(255, 193, 7, 0.2);
-    filter: drop-shadow(0 0 8px rgba(255, 193, 7, 0.5));
+      0 0 8px rgba(255, 193, 7, 0.3),
+      0 0 12px rgba(255, 193, 7, 0.2);
+    filter: none;
   }
 }
 

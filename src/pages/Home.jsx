@@ -71,7 +71,9 @@ function Home() {
 
         <div className="features-grid">
           <div className="feature-card">
-            <div className="feature-icon">🎨</div>
+            <div className="feature-icon">
+              <i className="bi bi-palette"></i>
+            </div>
             <h3 className="feature-title">Diseño Personalizado</h3>
             <p className="feature-description">
               Creamos sitios únicos que reflejan la identidad de tu marca con
@@ -81,7 +83,9 @@ function Home() {
           </div>
 
           <div className="feature-card">
-            <div className="feature-icon">🚀</div>
+            <div className="feature-icon">
+              <i className="bi bi-rocket-takeoff"></i>
+            </div>
             <h3 className="feature-title">SEO Optimizado</h3>
             <p className="feature-description">
               Posicionamiento en Google desde el día uno. Tu sitio será
@@ -91,7 +95,9 @@ function Home() {
           </div>
 
           <div className="feature-card">
-            <div className="feature-icon">🌐</div>
+            <div className="feature-icon">
+              <i className="bi bi-globe"></i>
+            </div>
             <h3 className="feature-title">Hosting + Dominio</h3>
             <p className="feature-description">
               Incluimos hosting premium y dominio por un año completo. Tu sitio
@@ -101,7 +107,9 @@ function Home() {
           </div>
 
           <div className="feature-card">
-            <div className="feature-icon">📱</div>
+            <div className="feature-icon">
+              <i className="bi bi-phone"></i>
+            </div>
             <h3 className="feature-title">Diseño Responsive</h3>
             <p className="feature-description">
               Perfecto en móviles, tablets y computadoras. Tu sitio se ve
@@ -111,7 +119,9 @@ function Home() {
           </div>
 
           <div className="feature-card">
-            <div className="feature-icon">⚡</div>
+            <div className="feature-icon">
+              <i className="bi bi-lightning-charge"></i>
+            </div>
             <h3 className="feature-title">Carga Ultra Rápida</h3>
             <p className="feature-description">
               Sitios optimizados para velocidad. Tus visitantes no esperarán y
@@ -121,7 +131,9 @@ function Home() {
           </div>
 
           <div className="feature-card">
-            <div className="feature-icon">🛡️</div>
+            <div className="feature-icon">
+              <i className="bi bi-shield-check"></i>
+            </div>
             <h3 className="feature-title">Seguridad SSL</h3>
             <p className="feature-description">
               Certificado SSL gratuito incluido. Protege los datos de tus
@@ -131,7 +143,9 @@ function Home() {
           </div>
 
           <div className="feature-card">
-            <div className="feature-icon">📊</div>
+            <div className="feature-icon">
+              <i className="bi bi-graph-up"></i>
+            </div>
             <h3 className="feature-title">Analytics Integrado</h3>
             <p className="feature-description">
               Google Analytics configurado para que sepas exactamente cómo
@@ -141,7 +155,9 @@ function Home() {
           </div>
 
           <div className="feature-card">
-            <div className="feature-icon">🎯</div>
+            <div className="feature-icon">
+              <i className="bi bi-envelope-at"></i>
+            </div>
             <h3 className="feature-title">Formularios de Contacto</h3>
             <p className="feature-description">
               Captura leads efectivamente con formularios optimizados que
