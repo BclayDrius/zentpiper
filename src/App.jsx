@@ -1,9 +1,9 @@
-import './App.css'
-import { Routes, Route } from 'react-router-dom'
-import Home from './components/Home'
-import Planes from './components/Planes'
-import Contacto from './components/Contacto'
-import Layout from './components/Layout'
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Planes from "./pages/Planes";
+import Contacto from "./pages/Contacto";
+import Layout from "./components/Layout";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <Route path="/contacto" element={<Contacto />} />
       </Routes>
     </Layout>
-  )
+  );
 }
 
-export default App
+export default App;
