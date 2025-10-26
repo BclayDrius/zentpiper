@@ -8,7 +8,7 @@
 
 .footer-content {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr;
   gap: 2rem;
   padding: 3rem 2rem;
   max-width: 1200px;
@@ -61,6 +61,7 @@
 .newsletter-form {
   display: flex;
   gap: 0.5rem;
+  width: 100%;
 }
 
 .newsletter-input {
@@ -116,7 +117,7 @@
   background-color: #000;
   padding: 1.5rem 2rem;
   display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   width: 100%;
   margin: 0 auto;
@@ -150,20 +151,17 @@
   justify-content: flex-end;
 }
 
-.social-links {
+.contact-info-bottom {
   display: flex;
-  gap: 1.5rem;
+  flex-direction: column;
+  gap: 0.3rem;
+  text-align: right;
 }
 
-.social-links a {
-  color: #888;
-  text-decoration: none;
+.contact-info-bottom p {
+  margin: 0;
   font-size: 0.9rem;
-  transition: color 0.3s ease;
-}
-
-.social-links a:hover {
-  color: var(--accent-color);
+  color: #888;
 }
 
 /* Responsive Adjustments */

@@ -1,7 +1,7 @@
 /* Scroll to Top Button */
 .scroll-to-top {
   position: fixed;
-  bottom: 2rem;
+  bottom: 6rem;
   right: 2rem;
   width: 50px;
   height: 50px;
@@ -25,7 +25,7 @@
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .scroll-to-top {
-    bottom: 1rem;
+    bottom: 5rem;
     right: 1rem;
     width: 45px;
     height: 45px;
