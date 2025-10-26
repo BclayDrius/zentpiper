@@ -117,10 +117,12 @@
   background-color: #000;
   padding: 1.5rem 2rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
+  justify-items: center;
   width: 100%;
   margin: 0 auto;
+  height: 10vh;
 }
 
 .footer-bottom-left {
@@ -130,6 +132,7 @@
   color: #888;
   text-transform: uppercase;
   letter-spacing: 1px;
+  justify-self: start;
 }
 
 .footer-bottom-center {
@@ -144,11 +147,18 @@
   border-radius: 4px;
   font-weight: bold;
   font-size: 0.9rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.footer-logo:hover {
+  background-color: #e6b000;
 }
 
 .footer-bottom-right {
   display: flex;
   justify-content: flex-end;
+  justify-self: end;
 }
 
 .contact-info-bottom {

@@ -36,8 +36,9 @@ function Planes() {
           <div className="plan-details">
             <p>Mantenimiento: S/ 240/año</p>
             <ul>
+              <li>Visualización web del local</li>
               <li>1 a 3 secciones</li>
-              <li>Hosting + dominio primer año</li>
+              <li>Hosting + dominio</li>
               <li>Soporte email/chat básico</li>
               <li>Certificado SSL gratuito</li>
             </ul>
@@ -60,6 +61,7 @@ function Planes() {
           <div className="plan-details">
             <p>Mantenimiento: S/ 360/año</p>
             <ul>
+              <li>Catálogo hasta 50 productos</li>
               <li>4 a 6 secciones</li>
               <li>Optimización SEO básica</li>
               <li>Formulario de contacto</li>
@@ -84,6 +86,7 @@ function Planes() {
             <p>Mantenimiento: S/ 480/año</p>
             <ul>
               <li>Hasta 10 secciones personalizadas</li>
+              <li>Datos de los usuarios</li>
               <li>SEO local + Google Analytics</li>
               <li>Integración con redes sociales</li>
               <li>Diseño mejorado y branding</li>
@@ -106,7 +109,8 @@ function Planes() {
           <div className="plan-details">
             <p>Mantenimiento: S/ 700/año</p>
             <ul>
-              <li>Catálogo hasta 50 productos</li>
+              <li>Catálogos personalizados</li>
+              <li>Seguimiento digital al cliente</li>
               <li>Carrito + pasarela de pago</li>
               <li>Panel de administración simple</li>
               <li>Soporte técnico prioritario</li>

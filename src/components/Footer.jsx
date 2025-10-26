@@ -53,9 +53,13 @@ function Footer() {
         <div className="footer-bottom-left">
           <span className="footer-brand">ZENTPIPER SOFTWARE</span>
         </div>
+        <div className="footer-bottom-center">
+          <a href="mailto:zentpiper@gmail.com" className="footer-logo">
+            <span>zentpiper@gmail.com</span>
+          </a>
+        </div>
         <div className="footer-bottom-right">
           <div className="contact-info-bottom">
-            <p>zentpiper@gmail.com</p>
             <p>+51 981 183 443</p>
             <p>+51 988 490 319</p>
           </div>
