@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import SEO from "../components/SEO";
 import "./Home.css";
 
 function Home() {
@@ -28,6 +29,12 @@ function Home() {
 
   return (
     <>
+      <SEO
+        title="Zentpiper - Sitios Web Profesionales para tu Negocio | Diseño Web Perú"
+        description="Creamos sitios web profesionales, rápidos y optimizados para SEO. Diseño responsive, hosting incluido, dominio gratis. Planes desde S/500. ¡Impulsa tu negocio online!"
+        keywords="diseño web, sitios web profesionales, páginas web Perú, desarrollo web, SEO, hosting, dominio, diseño responsive, tienda online"
+        canonical="https://zentpiper.com/"
+      />
       {/* Hero Section */}
       <section className="hero-section">
         <h1
