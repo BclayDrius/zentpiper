@@ -60,7 +60,7 @@ function Footer() {
         </div>
         <div className="footer-bottom-right">
           <div className="contact-info-bottom">
-            <p>+51 981 183 443</p>
+            <p>+51 945 935 080</p>
             <p>+51 988 490 319</p>
           </div>
         </div>
