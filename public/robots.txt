@@ -1,4 +1,14 @@
 User-agent: *
 Allow: /
+Crawl-delay: 1
 
+# Important pages
+Allow: /planes
+Allow: /contacto
+
+# Sitemap location
 Sitemap: https://zentpiper.com/sitemap.xml
+
+# Additional crawling hints
+User-agent: Googlebot
+Allow: /

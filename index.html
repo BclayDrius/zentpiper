@@ -72,7 +72,7 @@
       gtag("config", "GA_MEASUREMENT_ID");
     </script>
 
-    <!-- Structured Data -->
+    <!-- Structured Data - Organization -->
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -83,13 +83,15 @@
         "description": "Creamos sitios web profesionales, rápidos y optimizados para SEO. Diseño responsive, hosting incluido, dominio gratis.",
         "address": {
           "@type": "PostalAddress",
-          "addressCountry": "PE"
+          "addressCountry": "PE",
+          "addressRegion": "Lima"
         },
         "contactPoint": {
           "@type": "ContactPoint",
           "telephone": "+51-988-490-319",
           "contactType": "customer service",
-          "email": "zentpiper@gmail.com"
+          "email": "zentpiper@gmail.com",
+          "availableLanguage": "Spanish"
         },
         "sameAs": ["https://zentpiper.com"],
         "offers": [
@@ -122,6 +124,35 @@
             "description": "Catálogos personalizados, carrito + pasarela de pago"
           }
         ]
+      }
+    </script>
+
+    <!-- Structured Data - Local Business -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Zentpiper",
+        "description": "Empresa especializada en diseño y desarrollo de sitios web profesionales en Perú",
+        "url": "https://zentpiper.com",
+        "telephone": "+51-988-490-319",
+        "email": "zentpiper@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "PE",
+          "addressRegion": "Lima"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "-12.0464",
+          "longitude": "-77.0428"
+        },
+        "openingHours": "Mo-Fr 09:00-18:00",
+        "priceRange": "S/500-S/2500",
+        "serviceArea": {
+          "@type": "Country",
+          "name": "Peru"
+        }
       }
     </script>
 
