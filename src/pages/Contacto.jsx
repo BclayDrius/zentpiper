@@ -35,7 +35,7 @@ function Contacto() {
     e.preventDefault();
 
     // Número de WhatsApp (sin el signo + y con código de país)
-    const phoneNumber = "51988490319";
+    const phoneNumber = "51945935080";
 
     // Crear el mensaje formateado para WhatsApp
     let message = `*📩 Contacto desde Web Zentpiper*%0A%0A*👤 Nombre:* ${formData.nombre}%0A*✉️ Email:* ${formData.email}%0A*📝 Asunto:* ${formData.asunto}`;
