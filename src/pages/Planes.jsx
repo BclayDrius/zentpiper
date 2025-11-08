@@ -27,23 +27,9 @@ function Planes() {
     <>
       <SEO
   title="Planes y Precios | Zentpiper - Sitios Web Profesionales desde S/500"
-  description="Elige el plan ideal para tu negocio. Desde sitios web básicos hasta tiendas online completas. Planes desde S/500 con dominio, hosting y optimización SEO incluidos. Diseño web profesional en Perú."
-  keywords="planes Zentpiper, precios diseño web, páginas web Perú, desarrollo web, tienda online, hosting incluido, dominio gratis, diseño responsive, SEO profesional"
+  description="Elige tu plan ideal de diseño web profesional desde S/500. Todos incluyen hosting, dominio y optimización SEO. Planes para negocios, emprendedores y tiendas online."
+  keywords="planes diseño web, precios páginas web, desarrollo web profesional, hosting y dominio, SEO Perú, crear sitio web"
   canonical="https://zentpiper.com/planes"
-  openGraph={{
-    title: "Planes y Precios | Zentpiper - Sitios Web Profesionales desde S/500",
-    description: "Descubre nuestros planes de diseño web profesional. Incluyen hosting, dominio y optimización SEO. Planes desde S/500 para negocios en todo el Perú.",
-    url: "https://zentpiper.com/planes",
-    type: "website",
-    image: "https://zentpiper.com/og-image-planes.jpg"
-  }}
-  meta={[
-    { name: "robots", content: "index, follow" },
-    { name: "author", content: "Zentpiper" },
-    { name: "language", content: "es" },
-    { name: "geo.region", content: "PE" },
-    { name: "geo.placename", content: "Lima, Perú" }
-  ]}
 />
 
       <div className="planes-container">
