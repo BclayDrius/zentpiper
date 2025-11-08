@@ -1,89 +1,73 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-const SEO = ({ title, description, keywords, canonical }) => {
+/**
+ * Componente SEO
+ * Actualiza dinámicamente las etiquetas meta y Open Graph.
+ */
+const SEO = ({
+  title = "Zentpiper",
+  description = "Potencia tu negocio con soluciones digitales inteligentes.",
+  keywords = "software, inteligencia artificial, automatización, desarrollo web, zentpiper",
+  canonical,
+  image = "/assets/logo.png", // ruta desde /public o servida por tu build
+  favicon = "/favicon.ico",
+}) => {
   const location = useLocation();
 
   useEffect(() => {
-    // Update title
-    if (title) {
-      document.title = title;
-    }
+    const currentUrl = canonical || `https://zentpiper.com${location.pathname}`;
 
-    // Update meta description
-    if (description) {
-      let metaDescription = document.querySelector('meta[name="description"]');
-      if (metaDescription) {
-        metaDescription.setAttribute("content", description);
+    // Helper para actualizar o crear meta tags
+    const setMetaTag = (attrName, attrValue, content) => {
+      let element = document.querySelector(`[${attrName}="${attrValue}"]`);
+      if (!element) {
+        element = document.createElement("meta");
+        element.setAttribute(attrName, attrValue);
+        document.head.appendChild(element);
       }
-    }
+      element.setAttribute("content", content);
+    };
 
-    // Update meta keywords
-    if (keywords) {
-      let metaKeywords = document.querySelector('meta[name="keywords"]');
-      if (metaKeywords) {
-        metaKeywords.setAttribute("content", keywords);
-      }
-    }
+    // 🔹 Title
+    document.title = title;
 
-    // Update canonical URL
-    if (canonical) {
-      let canonicalLink = document.querySelector('link[rel="canonical"]');
-      if (canonicalLink) {
-        canonicalLink.setAttribute("href", canonical);
-      }
-    }
+    // 🔹 Descripción, keywords y canonical
+    setMetaTag("name", "description", description);
+    setMetaTag("name", "keywords", keywords);
 
-    // Update Open Graph tags
-    if (title) {
-      let ogTitle = document.querySelector('meta[property="og:title"]');
-      if (ogTitle) {
-        ogTitle.setAttribute("content", title);
-      }
+    // Canonical link
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement("link");
+      canonicalLink.setAttribute("rel", "canonical");
+      document.head.appendChild(canonicalLink);
     }
+    canonicalLink.setAttribute("href", currentUrl);
 
-    if (description) {
-      let ogDescription = document.querySelector(
-        'meta[property="og:description"]'
-      );
-      if (ogDescription) {
-        ogDescription.setAttribute("content", description);
-      }
+    // 🔹 Favicon
+    let faviconLink = document.querySelector('link[rel="icon"]');
+    if (!faviconLink) {
+      faviconLink = document.createElement("link");
+      faviconLink.setAttribute("rel", "icon");
+      document.head.appendChild(faviconLink);
     }
+    faviconLink.setAttribute("href", favicon);
 
-    if (canonical) {
-      let ogUrl = document.querySelector('meta[property="og:url"]');
-      if (ogUrl) {
-        ogUrl.setAttribute("content", canonical);
-      }
-    }
+    // 🔹 Open Graph
+    setMetaTag("property", "og:title", title);
+    setMetaTag("property", "og:description", description);
+    setMetaTag("property", "og:type", "website");
+    setMetaTag("property", "og:url", currentUrl);
+    setMetaTag("property", "og:image", image);
 
-    // Update Twitter tags
-    if (title) {
-      let twitterTitle = document.querySelector(
-        'meta[property="twitter:title"]'
-      );
-      if (twitterTitle) {
-        twitterTitle.setAttribute("content", title);
-      }
-    }
-
-    if (description) {
-      let twitterDescription = document.querySelector(
-        'meta[property="twitter:description"]'
-      );
-      if (twitterDescription) {
-        twitterDescription.setAttribute("content", description);
-      }
-    }
-
-    if (canonical) {
-      let twitterUrl = document.querySelector('meta[property="twitter:url"]');
-      if (twitterUrl) {
-        twitterUrl.setAttribute("content", canonical);
-      }
-    }
-  }, [title, description, keywords, canonical, location]);
+    // 🔹 Twitter Cards
+    setMetaTag("name", "twitter:card", "summary_large_image");
+    setMetaTag("name", "twitter:title", title);
+    setMetaTag("name", "twitter:description", description);
+    setMetaTag("name", "twitter:image", image);
+    setMetaTag("name", "twitter:url", currentUrl);
+  }, [title, description, keywords, canonical, image, favicon, location]);
 
   return null;
 };
