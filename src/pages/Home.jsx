@@ -30,11 +30,26 @@ function Home() {
   return (
     <>
       <SEO
-        title="Zentpiper - Sitios Web Profesionales para tu Negocio | Diseño Web Perú"
-        description="Creamos sitios web profesionales, rápidos y optimizados para SEO. Diseño responsive, hosting incluido, dominio gratis. Planes desde S/500. ¡Impulsa tu negocio online!"
-        keywords="diseño web, sitios web profesionales, páginas web Perú, desarrollo web, SEO, hosting, dominio, diseño responsive, tienda online"
-        canonical="https://zentpiper.com/"
-      />
+  title="Diseño Web Profesional en Perú | Crea tu Sitio con Zentpiper"
+  description="Diseñamos sitios web profesionales a medida, rápidos y optimizados para SEO. Incluye hosting, dominio y soporte. Impulsa tu negocio y atrae más clientes desde S/500."
+  keywords="diseño web Perú, crear página web profesional, desarrollo web, SEO para negocios, diseño responsive, tiendas online Perú, páginas web económicas, Zentpiper"
+  canonical="https://zentpiper.com/"
+  openGraph={{
+    title: "Diseño Web Profesional en Perú | Zentpiper",
+    description: "Tu sitio web rápido, profesional y optimizado para SEO. Planes desde S/500 con dominio y hosting incluidos.",
+    url: "https://zentpiper.com/",
+    type: "website",
+    image: "https://zentpiper.com/og-image.jpg"
+  }}
+  meta={[
+    { name: "robots", content: "index, follow" },
+    { name: "author", content: "Zentpiper" },
+    { name: "language", content: "es" },
+    { name: "geo.region", content: "PE" },
+    { name: "geo.placename", content: "Lima, Perú" }
+  ]}
+/>
+
       {/* Hero Section */}
       <section className="hero-section">
         <h1
