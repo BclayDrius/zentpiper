@@ -58,26 +58,11 @@ function Contacto() {
   return (
     <>
      <SEO
-  title="Contacto | Zentpiper - Crea tu Sitio Web Profesional en Perú"
-  description="¿Listo para impulsar tu negocio online? Contáctanos y recibe una cotización gratuita. Teléfono: 988 490 319 / 945 935 080 · Email: zentpiper@gmail.com · Atención en todo el Perú."
-  keywords="contacto Zentpiper, cotización página web, diseño web Perú, crear sitio web profesional, desarrollo web Lima, consulta gratuita diseño web"
+  title="Contacto | Zentpiper - Cotiza tu Sitio Web Profesional en Perú"
+  description="¿Listo para impulsar tu negocio online? Contáctanos y recibe una cotización gratuita. Teléfonos: 988 490 319 / 945 935 080 · Email: zentpiper@gmail.com · Atención en todo el Perú."
+  keywords="contacto Zentpiper, cotización sitio web, diseño web Perú, crear página web, desarrollo web Lima, consulta gratuita diseño web"
   canonical="https://zentpiper.com/contacto"
-  openGraph={{
-    title: "Contacto | Zentpiper - Crea tu Sitio Web Profesional en Perú",
-    description: "Habla con nuestro equipo y obtén una cotización gratuita para tu sitio web profesional. Atención personalizada en todo el Perú.",
-    url: "https://zentpiper.com/contacto",
-    type: "website",
-    image: "https://zentpiper.com/og-image-contacto.jpg"
-  }}
-  meta={[
-    { name: "robots", content: "index, follow" },
-    { name: "author", content: "Zentpiper" },
-    { name: "language", content: "es" },
-    { name: "geo.region", content: "PE" },
-    { name: "geo.placename", content: "Lima, Perú" }
-  ]}
 />
-
       <div className="contacto-container">
         <h1 className="contacto-title">Contáctanos</h1>
 
