@@ -12,7 +12,7 @@ function Layout({ children }) {
     <div className="app-container">
       <Header />
       <main>{children}</main>
-      {location.pathname === "/Contacto" ? <footerAlt /> : <footer />}
+      {location.pathname === "/contacto" ? <FooterAlt /> : <Footer />}
       <ScrollToTop />
     </div>
   );
