@@ -1,7 +1,7 @@
 import { useState } from "react";
-import "./Footeralt.css";
+import "./FooterAlt.css";
 
-function Footer() {
+function FooterAlt() {
   const [mensaje, setMensaje] = useState("");
 
   const handleSubmit = (e) => {
@@ -12,26 +12,16 @@ function Footer() {
       return;
     }
 
-    // Número de WhatsApp (sin el signo + y con código de país)
     const phoneNumber = "51981183443";
-
-    // Crear el mensaje formateado para WhatsApp
     const message = `*💬 Mensaje desde Web Zentpiper*%0A%0A*📝 Mensaje:* ${mensaje}`;
-
-    // Crear la URL de WhatsApp
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
-
-    // Abrir WhatsApp en una nueva pestaña
     window.open(whatsappUrl, "_blank");
-
-    // Limpiar el campo después de enviar
     setMensaje("");
   };
 
   return (
     <footer className="footer">
-      <div className="footer-content">
-      </div>
+      <div className="footer-content"></div>
 
       <div className="footer-bottom">
         <div className="footer-bottom-left">
@@ -53,4 +43,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default FooterAlt;
