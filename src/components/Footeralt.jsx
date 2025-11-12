@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./Footer.css";
+import "./Footeralt.css";
 
 function Footer() {
   const [mensaje, setMensaje] = useState("");
