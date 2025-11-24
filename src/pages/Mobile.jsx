@@ -111,9 +111,7 @@ function Mobile() {
         <h2 className="mobile-services-title">Servicios Móviles</h2>
         
         {/* Indicador de País Actual */}
-        <div className="pais-indicator">
-          Precios en {preciosPorPais[paisSeleccionado].moneda} - {paisSeleccionado === 'PE' ? 'Perú' : 'Chile'}
-        </div>
+        
 
         <div className="mobile-services-grid">
           {/* App Android */}

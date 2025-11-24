@@ -109,9 +109,7 @@ function Planes() {
         <h2 className="planes-title">Nuestros Planes</h2>
         
         {/* Indicador de País Actual */}
-        <div className="pais-indicator">
-          Precios en {preciosPorPais[paisSeleccionado].moneda} - {paisSeleccionado === 'PE' ? 'Perú' : 'Chile'}
-        </div>
+        
 
         <div className="planes-grid">
           {/* Plan Básico */}
