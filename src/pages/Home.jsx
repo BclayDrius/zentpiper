@@ -13,6 +13,9 @@ function Home() {
     navigate("/contacto");
   };
 
+  const handleVerMobile = () => {
+    navigate("/mobile")
+  };
   const handleSolicitarInformacion = () => {
     navigate("/contacto");
     // Hacer scroll al formulario después de navegar
@@ -59,10 +62,114 @@ function Home() {
             onClick={handleHablarConNosotros}
           >
             <span>Habla con nosotros</span>
-            <i className="arrow">💬</i>
+            
           </button>
         </div>
       </section>
+
+
+       {/* Mobile Apps Section */}
+<section className="apps-section">
+  <div className="apps-content">
+    <h1 className="apps-title">
+      <span className="title-main">Aplicaciones Móviles</span>
+      <span className="title-sub">para Android & iOS</span>
+    </h1>
+    <p className="apps-subtitle">
+      Desarrollamos apps nativas e híbridas con el mejor diseño, 
+      rendimiento y experiencia de usuario para ambos sistemas operativos.
+    </p>
+    
+    <div className="platforms-badge">
+      <div className="platform android">
+        <span className="platform-name">Android</span>
+      </div>
+      <div className="platform ios">
+        <span className="platform-name">iOS</span>
+      </div>
+    </div>
+
+    <div className="features-grid-mini">
+      <div className="feature-mini">
+        <div className="feature-icon-mini"></div>
+        <div className="feature-text-mini">Máximo rendimiento</div>
+      </div>
+      <div className="feature-mini">
+        <div className="feature-icon-mini"></div>
+        <div className="feature-text-mini">Diseño intuitivo</div>
+      </div>
+      <div className="feature-mini">
+        <div className="feature-icon-mini"></div>
+        <div className="feature-text-mini">Seguridad integrada</div>
+      </div>
+    </div>
+
+    <div className="cta-buttons">
+      <button
+        className="btn btn-primary btn-apps"
+        onClick={handleVerMobile}
+      >
+        <span>Ver Planes Mobile</span>
+        <i className="arrow">→</i>
+      </button>
+      <button
+        className="btn btn-secondary btn-apps"
+        onClick={handleHablarConNosotros}
+      >
+        <span>Cotizar Proyecto</span>
+        <i className="arrow"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+      
+        {/* Soluciones Digitales Section - COMPACTA */}
+      <section className="solutions-section">
+        <div className="solutions-content">
+          <h1 className="solutions-title">
+            <span className="title-main">Soluciones Digitales</span>
+            <span className="title-sub">Personalizadas</span>
+          </h1>
+          <p className="solutions-subtitle">
+            Desarrollamos cualquier tipo de sistema adaptado a tus necesidades específicas
+          </p>
+          
+
+          <div className="features-grid-mini">
+            <div className="feature-mini">
+              <div className="feature-icon-mini"></div>
+              <div className="feature-text-mini">Desarrollo a medida</div>
+            </div>
+            <div className="feature-mini">
+              <div className="feature-icon-mini"></div>
+              <div className="feature-text-mini">Tecnología moderna</div>
+            </div>
+            <div className="feature-mini">
+              <div className="feature-icon-mini"></div>
+              <div className="feature-text-mini">Soporte continuo</div>
+            </div>
+          </div>
+
+          <div className="cta-buttons">
+            <button
+              className="btn btn-primary btn-apps"
+              onClick={handleHablarConNosotros}
+            >
+              <span>Consultar Proyecto</span>
+              
+            </button>
+            <button
+              className="btn btn-secondary btn-apps"
+              onClick={handleHablarConNosotros}
+            >
+              <span>Más Información</span>
+              
+            </button>
+          </div>
+        </div>
+      </section>
+
 
       {/* Features Section */}
       <section className="features-section">
@@ -175,6 +282,8 @@ function Home() {
         </div>
       </section>
 
+    
+      
       {/* Call to Action Section */}
       <section className="cta-section">
         <div className="triangle-pattern">

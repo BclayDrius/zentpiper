@@ -721,3 +721,619 @@
     font-size: 1.8rem;
   }
 }
+
+/* Apps Section Styles - Variación de colores de la empresa */
+.apps-section {
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95), rgba(30, 30, 30, 0.9));
+  padding: 5rem 2rem;
+  text-align: center;
+  color: var(--text-color);
+  position: relative;
+  overflow: hidden;
+  border-top: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.apps-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(255, 193, 7, 0.08), transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(255, 193, 7, 0.05), transparent 50%);
+  pointer-events: none;
+}
+
+.apps-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.apps-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.title-main {
+  display: block;
+  background: linear-gradient(135deg, var(--accent-color), #ffd54f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 20px rgba(255, 193, 7, 0.3);
+}
+
+.title-sub {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--accent-color);
+  margin-top: 0.5rem;
+  opacity: 0.9;
+}
+
+.apps-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--text-color);
+}
+
+/* Platforms Badge - Con variación de colores */
+.platforms-badge {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.platform {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 193, 7, 0.1);
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.platform::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 193, 7, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.platform:hover::before {
+  left: 100%;
+}
+
+.platform:hover {
+  background: rgba(255, 193, 7, 0.15);
+  transform: translateY(-3px);
+  border-color: var(--accent-color);
+  box-shadow: 0 8px 20px rgba(255, 193, 7, 0.2);
+}
+
+.platform-icon {
+  font-size: 1.3rem;
+  filter: drop-shadow(0 0 5px rgba(255, 193, 7, 0.5));
+}
+
+.platform-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--accent-color);
+}
+
+/* Features Grid Mini - Con variación */
+.features-grid-mini {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.feature-mini {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 193, 7, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-mini::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-color), #ffd54f, var(--accent-color));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.feature-mini:hover::before {
+  transform: scaleX(1);
+}
+
+.feature-mini:hover {
+  background: rgba(255, 193, 7, 0.08);
+  transform: translateY(-2px);
+  border-color: rgba(255, 193, 7, 0.3);
+}
+
+.feature-icon-mini {
+  font-size: 1.2rem;
+  color: var(--accent-color);
+  filter: drop-shadow(0 0 3px rgba(255, 193, 7, 0.3));
+}
+
+.feature-text-mini {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+/* CTA Buttons para Apps - Con variación */
+.btn-apps {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-apps::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn-apps:hover::before {
+  left: 100%;
+}
+
+.btn-apps:hover {
+  transform: translateY(-3px);
+}
+
+/* Botón primario específico para apps */
+.btn-primary.btn-apps {
+  background: linear-gradient(135deg, var(--accent-color), #ffd54f);
+  color: #000;
+  border: 2px solid transparent;
+  box-shadow: 0 6px 20px rgba(255, 193, 7, 0.3);
+}
+
+.btn-primary.btn-apps:hover {
+  background: linear-gradient(135deg, #ffd54f, var(--accent-color));
+  box-shadow: 0 8px 25px rgba(255, 193, 7, 0.5);
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* Botón secundario específico para apps */
+.btn-secondary.btn-apps {
+  background: rgba(255, 193, 7, 0.1);
+  color: var(--accent-color);
+  border: 2px solid var(--accent-color);
+}
+
+.btn-secondary.btn-apps:hover {
+  background: var(--accent-color);
+  color: #000;
+  border-color: var(--accent-color);
+  box-shadow: 0 6px 20px rgba(255, 193, 7, 0.3);
+}
+
+/* Flecha animada */
+.btn-apps .arrow {
+  transition: transform 0.3s ease;
+}
+
+.btn-apps:hover .arrow {
+  transform: translateX(3px);
+}
+
+/* Responsive para Apps Section */
+@media (max-width: 768px) {
+  .apps-section {
+    padding: 3rem 1rem;
+  }
+  
+  .apps-title {
+    font-size: 2.2rem;
+  }
+  
+  .title-sub {
+    font-size: 1.4rem;
+  }
+  
+  .apps-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .platforms-badge {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .features-grid-mini {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn-apps {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+  
+  /* Simplificar efectos en móviles */
+  .platform::before,
+  .feature-mini::before,
+  .btn-apps::before {
+    display: none;
+  }
+  
+  .platform:hover,
+  .feature-mini:hover,
+  .btn-apps:hover {
+    transform: translateY(-2px);
+  }
+}
+
+
+/* Soluciones Digitales Section - Compacta con fondo mucho más oscuro */
+.solutions-section {
+  background: linear-gradient(135deg, rgba(44, 43, 43, 0.99), rgba(18, 18, 18, 0.98));
+  padding: 4rem 2rem;
+  text-align: center;
+  color: var(--text-color);
+  position: relative;
+  overflow: hidden;
+  border-top: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+.solutions-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(240, 200, 79, 0.04), transparent 50%),
+    radial-gradient(circle at 80% 70%, rgba(241, 189, 34, 0.02), transparent 50%);
+  pointer-events: none;
+}
+
+.solutions-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.solutions-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.1;
+}
+
+.solutions-title .title-main {
+  display: block;
+  background: linear-gradient(135deg, var(--accent-color), #ffd54f);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 0 0 20px rgba(255, 193, 7, 0.4);
+}
+
+.solutions-title .title-sub {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 400;
+  color: var(--accent-color);
+  margin-top: 0.5rem;
+  opacity: 0.9;
+}
+
+.solutions-subtitle {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--text-color);
+}
+
+/* Platforms Badge - Con fondo mucho más oscuro */
+.solutions-section .platforms-badge {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.solutions-section .platform {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 193, 7, 0.05);
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.solutions-section .platform::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 193, 7, 0.12), transparent);
+  transition: left 0.5s;
+}
+
+.solutions-section .platform:hover::before {
+  left: 100%;
+}
+
+.solutions-section .platform:hover {
+  background: rgba(255, 193, 7, 0.08);
+  transform: translateY(-3px);
+  border-color: var(--accent-color);
+  box-shadow: 0 8px 20px rgba(255, 193, 7, 0.3);
+}
+
+.solutions-section .platform-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--accent-color);
+}
+
+/* Features Grid Mini - Con fondo mucho más oscuro */
+.solutions-section .features-grid-mini {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.solutions-section .feature-mini {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  padding: 0.8rem 1.2rem;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 193, 7, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.solutions-section .feature-mini::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent-color), #ffd54f, var(--accent-color));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.solutions-section .feature-mini:hover::before {
+  transform: scaleX(1);
+}
+
+.solutions-section .feature-mini:hover {
+  background: rgba(255, 193, 7, 0.04);
+  transform: translateY(-2px);
+  border-color: rgba(255, 193, 7, 0.3);
+}
+
+.solutions-section .feature-icon-mini {
+  font-size: 1.2rem;
+  color: var(--accent-color);
+  filter: drop-shadow(0 0 3px rgba(255, 193, 7, 0.4));
+}
+
+.solutions-section .feature-text-mini {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+/* CTA Buttons - Con máximo contraste */
+.solutions-section .cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.solutions-section .btn-apps {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.solutions-section .btn-apps::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+  transition: left 0.5s;
+}
+
+.solutions-section .btn-apps:hover::before {
+  left: 100%;
+}
+
+.solutions-section .btn-apps:hover {
+  transform: translateY(-3px);
+}
+
+/* Botón primario específico para soluciones - Máximo contraste */
+.solutions-section .btn-primary.btn-apps {
+  background: linear-gradient(135deg, var(--accent-color), #ffd54f);
+  color: #000;
+  border: 2px solid transparent;
+  box-shadow: 0 6px 20px rgba(255, 193, 7, 0.5);
+}
+
+.solutions-section .btn-primary.btn-apps:hover {
+  background: linear-gradient(135deg, #ffd54f, var(--accent-color));
+  box-shadow: 0 8px 25px rgba(255, 193, 7, 0.7);
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* Botón secundario específico para soluciones - Máximo contraste */
+.solutions-section .btn-secondary.btn-apps {
+  background: rgba(255, 193, 7, 0.05);
+  color: var(--accent-color);
+  border: 2px solid var(--accent-color);
+}
+
+.solutions-section .btn-secondary.btn-apps:hover {
+  background: var(--accent-color);
+  color: #000;
+  border-color: var(--accent-color);
+  box-shadow: 0 6px 20px rgba(255, 193, 7, 0.5);
+}
+
+/* Flecha animada */
+.solutions-section .btn-apps .arrow {
+  transition: transform 0.3s ease;
+}
+
+.solutions-section .btn-apps:hover .arrow {
+  transform: translateX(3px);
+}
+
+/* Responsive para Soluciones Section */
+@media (max-width: 768px) {
+  .solutions-section {
+    padding: 3rem 1rem;
+    background: linear-gradient(135deg, rgba(2, 2, 2, 0.99), rgba(6, 6, 6, 0.98));
+  }
+  
+  .solutions-title {
+    font-size: 2.2rem;
+  }
+  
+  .solutions-title .title-sub {
+    font-size: 1.4rem;
+  }
+  
+  .solutions-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .solutions-section .platforms-badge {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .solutions-section .features-grid-mini {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .solutions-section .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .solutions-section .btn-apps {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+  
+  /* Simplificar efectos en móviles */
+  .solutions-section .platform::before,
+  .solutions-section .feature-mini::before,
+  .solutions-section .btn-apps::before {
+    display: none;
+  }
+  
+  .solutions-section .platform:hover,
+  .solutions-section .feature-mini:hover,
+  .solutions-section .btn-apps:hover {
+    transform: translateY(-2px);
+  }
+}

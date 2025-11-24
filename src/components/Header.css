@@ -10,6 +10,7 @@
   transition: transform 0.3s ease;
   border-bottom: 2px solid var(--accent-color);
   box-shadow: 0 4px 15px rgba(255, 193, 7, 0.15);
+  
 }
 
 .header-visible {
@@ -21,7 +22,7 @@
 }
 
 .header-content {
-width: 95%;
+  width: 100%;
   margin: 0 auto;
   padding: 1rem 2rem;
   display: flex;
@@ -70,18 +71,21 @@ width: 95%;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 25rem;
+  width: 35rem; /* Aumentado para más separación */
+  gap: 0.5rem; /* Separación adicional entre botones */
 }
 
 .nav-link {
   color: var(--text-color);
   text-decoration: none;
   font-weight: 600;
-  padding: 0.6rem 1.2rem;
+  padding: 0.5rem 1.2rem; /* Aumentado horizontalmente */
   position: relative;
   transition: all 0.3s ease;
   border-radius: 4px;
   letter-spacing: 0.5px;
+  font-size: 0.9rem;
+  margin: 0 0.3rem; /* Separación extra entre enlaces */
 }
 
 .nav-link:hover {
@@ -126,18 +130,188 @@ width: 95%;
     gap: 1rem;
     padding: 1rem;
   }
-  .navbar{
-    width: 20rem;
-  }
-  .nav-links {
-    gap: 1rem;
+  .navbar {
+    width: 25rem; /* Aumentado para móviles */
+    gap: 0.3rem;
   }
   
   .nav-link {
-    padding: 0.5rem 0.8rem;
-    font-size: 0.9rem;
+    padding: 0.4rem 0.9rem; /* Más separación en móviles */
+    font-size: 0.85rem;
+    margin: 0 0.2rem;
   }
-  .logo-container{
+  
+  .logo-container {
     justify-content: center;
   }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    width: 100%;
+    max-width: 22rem;
+    gap: 0.2rem;
+  }
+  
+  .nav-link {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.8rem;
+    margin: 0 0.1rem;
+  }
+}
+
+/* Country Selector Styles */
+.country-selector {
+  position: relative;
+  margin-left: 1rem;
+}
+
+.country-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 193, 7, 0.1);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  border-radius: 8px;
+  padding: 0.5rem 0.8rem;
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 80px;
+}
+
+.country-btn:hover {
+  background: rgba(255, 193, 7, 0.15);
+  border-color: var(--accent-color);
+}
+
+.country-flag {
+  font-size: 1.1rem;
+}
+
+.country-code {
+  font-size: 0.8rem;
+}
+
+.dropdown-arrow {
+  font-size: 0.7rem;
+  transition: transform 0.3s ease;
+}
+
+.country-selector:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+.country-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: rgba(10, 10, 10, 0.95);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  border-radius: 8px;
+  padding: 0.5rem;
+  min-width: 120px;
+  z-index: 1001;
+  backdrop-filter: blur(10px);
+  margin-top: 0.5rem;
+}
+
+.country-option {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+  padding: 0.7rem 0.8rem;
+  background: transparent;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.country-option:hover {
+  background: rgba(255, 193, 7, 0.1);
+  color: var(--accent-color);
+}
+
+.country-option.selected {
+  background: rgba(255, 193, 7, 0.15);
+  color: var(--accent-color);
+}
+
+.country-name {
+  flex: 1;
+  text-align: left;
+}
+
+/* Country Selector Mobile */
+.country-selector-mobile {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.country-options-mobile {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.country-option-mobile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 193, 7, 0.1);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  border-radius: 8px;
+  padding: 0.6rem 1rem;
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  justify-content: center;
+}
+
+.country-option-mobile:hover {
+  background: rgba(255, 193, 7, 0.2);
+}
+
+.country-option-mobile.selected {
+  background: var(--accent-color);
+  color: #000;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .country-selector {
+    display: none;
+  }
+  
+  .navbar-desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-menu-btn,
+  .mobile-nav,
+  .country-selector-mobile {
+    display: none;
+  }
+}
+
+/* Asegurar que el header-content tenga espacio para el country selector */
+.header-content {
+  width: 95%;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
 }

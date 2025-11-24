@@ -5,6 +5,7 @@ import "./Contacto.css";
 
 function Contacto() {
   const location = useLocation();
+  const [paisSeleccionado, setPaisSeleccionado] = useState("PE");
   const [formData, setFormData] = useState({
     nombre: "",
     email: "",
@@ -13,6 +14,40 @@ function Contacto() {
     mensaje: "",
   });
 
+  // Contactos por país
+  const contactosPorPais = {
+    PE: {
+      telefono: "+51 945 935 080",
+      whatsapp: "51945935080",
+      email: "zentpiper@gmail.com"
+    },
+    CL: {
+      telefono: "+56 9 3660 4464", 
+      whatsapp: "56936604464",
+      email: "zentpiper@gmail.com"
+    }
+  };
+
+  // Escuchar cambios de país
+  useEffect(() => {
+    const handlePaisCambiado = (event) => {
+      const { pais } = event.detail;
+      setPaisSeleccionado(pais);
+    };
+
+    // Cargar país inicial desde localStorage
+    const paisGuardado = localStorage.getItem('paisSeleccionado') || 'PE';
+    setPaisSeleccionado(paisGuardado);
+
+    window.addEventListener('paisCambiado', handlePaisCambiado);
+    
+    return () => {
+      window.removeEventListener('paisCambiado', handlePaisCambiado);
+    };
+  }, []);
+
+  const contactoActual = contactosPorPais[paisSeleccionado];
+
   // Efecto para cargar datos desde la navegación
   useEffect(() => {
     if (location.state) {
@@ -20,6 +55,9 @@ function Contacto() {
         ...prevState,
         asunto: location.state.asunto || "",
         plan: location.state.plan || "",
+        // Agregar país y moneda si vienen del state
+        ...(location.state.pais && { pais: location.state.pais }),
+        ...(location.state.moneda && { moneda: location.state.moneda })
       }));
     }
   }, [location.state]);
@@ -35,15 +73,19 @@ function Contacto() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Número de WhatsApp (sin el signo + y con código de país)
-    const phoneNumber = "51945935080";
+    const phoneNumber = contactoActual.whatsapp;
 
     // Crear el mensaje formateado para WhatsApp
-    let message = `*📩 Contacto desde Web Zentpiper*%0A%0A*👤 Nombre:* ${formData.nombre}%0A*✉️ Email:* ${formData.email}%0A*📝 Asunto:* ${formData.asunto}`;
+    let message = `*📩 Contacto desde Web Zentpiper*%0A%0A*🌎 País:* ${paisSeleccionado === 'PE' ? 'Perú 🇵🇪' : 'Chile 🇨🇱'}%0A*👤 Nombre:* ${formData.nombre}%0A*✉️ Email:* ${formData.email}%0A*📝 Asunto:* ${formData.asunto}`;
 
     // Agregar plan si está seleccionado
     if (formData.plan) {
       message += `%0A*📋 Plan:* ${formData.plan}`;
+    }
+
+    // Agregar moneda si viene del state (desde planes/mobile)
+    if (location.state?.moneda) {
+      message += `%0A*💰 Moneda seleccionada:* ${location.state.moneda}`;
     }
 
     message += `%0A*💬 Mensaje:* ${formData.mensaje}`;
@@ -57,12 +99,13 @@ function Contacto() {
 
   return (
     <>
-     <SEO
-  title="Contacto | Zentpiper - Cotiza tu Sitio Web Profesional en Perú"
-  description="¿Listo para impulsar tu negocio online? Contáctanos y recibe una cotización gratuita. Teléfonos: 988 490 319 / 945 935 080 · Email: zentpiper@gmail.com · Atención en todo el Perú."
-  keywords="contacto Zentpiper, cotización sitio web, diseño web Perú, crear página web, desarrollo web Lima, consulta gratuita diseño web"
-  canonical="https://zentpiper.com/contacto"
-/>
+      <SEO
+        title={`Contacto | Zentpiper - Cotiza tu Proyecto en ${paisSeleccionado === 'PE' ? 'Perú' : 'Chile'}`}
+        description={`¿Listo para impulsar tu negocio online? Contáctanos y recibe una cotización gratuita. Teléfono: ${contactoActual.telefono} · Email: ${contactoActual.email} · Atención en ${paisSeleccionado === 'PE' ? 'Perú' : 'Chile'}.`}
+        keywords={`contacto Zentpiper, cotización sitio web, diseño web ${paisSeleccionado === 'PE' ? 'Perú' : 'Chile'}, crear página web, desarrollo web, consulta gratuita diseño web`}
+        canonical="https://zentpiper.com/contacto"
+      />
+      
       <div className="contacto-container">
         <h1 className="contacto-title">Contáctanos</h1>
 
@@ -72,11 +115,8 @@ function Contacto() {
               <i className="fas fa-phone"></i>
             </div>
             <h3>Teléfono</h3>
-            <p>
-              988 490 319
-              <br />
-              945 935 080
-            </p>
+            <p>{contactoActual.telefono}</p>
+            <small>{paisSeleccionado === 'PE' ? 'Perú' : 'Chile'}</small>
           </div>
 
           <div className="contacto-card">
@@ -84,12 +124,15 @@ function Contacto() {
               <i className="fas fa-envelope"></i>
             </div>
             <h3>Correo Electrónico</h3>
-            <p>zentpiper@gmail.com</p>
+            <p>{contactoActual.email}</p>
           </div>
         </div>
 
         <div className="contacto-form-container" id="contacto-form-container">
           <h2>Envíanos un mensaje</h2>
+          <div className="pais-indicator-contacto">
+            Estás contactando desde: <strong>{paisSeleccionado === 'PE' ? 'Perú 🇵🇪' : 'Chile 🇨🇱'}</strong>
+          </div>
           <form className="contacto-form" onSubmit={handleSubmit}>
             <div className="form-group">
               <label htmlFor="nombre">Nombre</label>
@@ -126,24 +169,16 @@ function Contacto() {
                 className="select-asunto"
               >
                 <option value="">Selecciona un asunto</option>
-                <option value="Ver cuál sería mi plan ideal">
-                  Ver cuál sería mi plan ideal
-                </option>
-                <option value="Información extra sobre los planes">
-                  Información extra sobre los planes
-                </option>
-                <option value="Creación de página web">
-                  Creación de página web
-                </option>
+                <option value="Página Web">Página Web</option>
+                <option value="Aplicación Mobile">Aplicación Mobile</option>
+                <option value="Cotizar Proyecto">Cotizar Proyecto</option>
                 <option value="Soporte técnico">Soporte técnico</option>
-                <option value="Consulta sobre servicios adicionales">
-                  Consulta sobre servicios adicionales
-                </option>
+                <option value="Otros">Otros</option>
               </select>
             </div>
 
-            {/* Campo Plan - Solo se muestra si el asunto es "Creación de página web" */}
-            {formData.asunto === "Creación de página web" && (
+            {/* Campo Plan - Solo se muestra si el asunto es "Página Web" */}
+            {formData.asunto === "Página Web" && (
               <div className="form-group">
                 <label htmlFor="plan">Plan</label>
                 <select
@@ -155,18 +190,10 @@ function Contacto() {
                   className="select-plan"
                 >
                   <option value="">Selecciona un plan</option>
-                  <option value="Plan Básico">
-                    Plan Básico - S/ 500 (anual)
-                  </option>
-                  <option value="Plan Emprendedor">
-                    Plan Emprendedor - S/ 900 (anual)
-                  </option>
-                  <option value="Plan Profesional">
-                    Plan Profesional - S/ 1,500 (anual)
-                  </option>
-                  <option value="Plan Tienda Online">
-                    Plan Tienda Online - S/ 2,500 (anual)
-                  </option>
+                  <option value="Plan Básico">Plan Básico</option>
+                  <option value="Plan Emprendedor">Plan Emprendedor</option>
+                  <option value="Plan Profesional">Plan Profesional</option>
+                  <option value="Plan Tienda Online">Plan Tienda Online</option>
                 </select>
               </div>
             )}
@@ -184,7 +211,7 @@ function Contacto() {
             </div>
 
             <button type="submit" className="submit-button">
-              Enviar a WhatsApp
+              Enviar a WhatsApp {paisSeleccionado === 'PE' ? '(Perú)' : '(Chile)'}
             </button>
           </form>
         </div>

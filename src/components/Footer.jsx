@@ -1,8 +1,43 @@
-import { useState } from "react";
-import "./Footer.css";
+import { useState, useEffect } from "react";
+import "./FooterAlt.css";
 
-function Footer() {
+function FooterAlt() {
   const [mensaje, setMensaje] = useState("");
+  const [paisSeleccionado, setPaisSeleccionado] = useState("PE");
+
+  // Números de WhatsApp por país
+  const contactosPorPais = {
+    PE: {
+      telefono: "+51 945 935 080",
+      whatsapp: "51945935080", // Número para WhatsApp (sin +)
+      email: "zentpiper@gmail.com"
+    },
+    CL: {
+      telefono: "+56 9 3660 4464",
+      whatsapp: "56936604464", // Número para WhatsApp (sin +)
+      email: "zentpiper@gmail.com"
+    }
+  };
+
+  // Escuchar cambios de país
+  useEffect(() => {
+    const handlePaisCambiado = (event) => {
+      const { pais } = event.detail;
+      setPaisSeleccionado(pais);
+    };
+
+    // Cargar país inicial desde localStorage
+    const paisGuardado = localStorage.getItem('paisSeleccionado') || 'PE';
+    setPaisSeleccionado(paisGuardado);
+
+    window.addEventListener('paisCambiado', handlePaisCambiado);
+    
+    return () => {
+      window.removeEventListener('paisCambiado', handlePaisCambiado);
+    };
+  }, []);
+
+  const contactoActual = contactosPorPais[paisSeleccionado];
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -12,56 +47,29 @@ function Footer() {
       return;
     }
 
-    // Número de WhatsApp (sin el signo + y con código de país)
-    const phoneNumber = "51981183443";
-
-    // Crear el mensaje formateado para WhatsApp
-    const message = `*💬 Mensaje desde Web Zentpiper*%0A%0A*📝 Mensaje:* ${mensaje}`;
-
-    // Crear la URL de WhatsApp
+    const phoneNumber = contactoActual.whatsapp;
+    const message = `*💬 Mensaje desde Web Zentpiper*%0A%0A*🌎 País:* ${paisSeleccionado === 'PE' ? 'Perú' : 'Chile'}%0A*📝 Mensaje:* ${mensaje}`;
     const whatsappUrl = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${message}`;
-
-    // Abrir WhatsApp en una nueva pestaña
     window.open(whatsappUrl, "_blank");
-
-    // Limpiar el campo después de enviar
     setMensaje("");
   };
 
   return (
     <footer className="footer">
-      <div className="footer-content">
-        <div className="footer-section footer-newsletter">
-          <h3>¡Coloca un mensaje para empezar la conversación!</h3>
-          <form className="newsletter-form" onSubmit={handleSubmit}>
-            <input
-              type="text"
-              placeholder="Escribe tu mensaje aquí..."
-              className="newsletter-input"
-              value={mensaje}
-              onChange={(e) => setMensaje(e.target.value)}
-              required
-            />
-            <button type="submit" className="newsletter-button">
-              →
-            </button>
-          </form>
-        </div>
-      </div>
+      <div className="footer-content"></div>
 
       <div className="footer-bottom">
         <div className="footer-bottom-left">
           <span className="footer-brand">ZENTPIPER SOFTWARE</span>
         </div>
         <div className="footer-bottom-center">
-          <a href="mailto:zentpiper@gmail.com" className="footer-logo">
-            <span>zentpiper@gmail.com</span>
+          <a href={`mailto:${contactoActual.email}`} className="footer-logo">
+            <span>{contactoActual.email}</span>
           </a>
         </div>
         <div className="footer-bottom-right">
           <div className="contact-info-bottom">
-            <p>+51 945 935 080</p>
-            <p>+51 988 490 319</p>
+            <p>{contactoActual.telefono}</p>
           </div>
         </div>
       </div>
@@ -69,4 +77,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default FooterAlt;

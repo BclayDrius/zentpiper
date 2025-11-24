@@ -1,0 +1,401 @@
+/* Portafolio.css - Elegante & Minimalista Profesional (Textos Mejorados) */
+
+.portafolio-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+.portafolio-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.portafolio-header h1 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--text-color);
+  margin-bottom: 1rem;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.portafolio-header p {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  opacity: 0.7;
+  font-weight: 350;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+}
+
+/* Grid mejorado */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  gap: 2.5rem;
+  justify-items: center;
+}
+
+/* Tarjetas elegantes */
+.project-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--card-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.04),
+    0 1px 2px rgba(0, 0, 0, 0.02);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    var(--accent-color) 50%, 
+    transparent 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 25px 50px rgba(0, 0, 0, 0.12),
+    0 8px 16px rgba(0, 0, 0, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+/* Contenedor de imagen mejorado */
+.project-image-container {
+  position: relative;
+  overflow: hidden;
+  height: 240px;
+  flex-shrink: 0;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.05);
+}
+
+/* Overlay sutil en hover */
+.project-image-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.02) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-image-container::after {
+  opacity: 1;
+}
+
+/* Contenido mejorado - TEXTOS MÁS ELEGANTES */
+.project-content {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.project-title {
+  font-size: 1.3rem;
+  font-weight: 400;
+  color: var(--text-color);
+  margin: 0 0 1rem 0;
+  line-height: 1.3;
+  letter-spacing: -0.3px;
+  text-align: center;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+.project-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 1px;
+  background: var(--accent-color);
+  opacity: 0.5;
+}
+
+.project-description {
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--text-color);
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+  font-weight: 350;
+  text-align: center;
+  letter-spacing: 0.1px;
+  max-width: 320px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Tags elegantes - CENTRADOS */
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.tag {
+  padding: 0.35rem 0.75rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  font-size: 0.7rem;
+  color: var(--text-color);
+  opacity: 0.8;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  transition: all 0.3s ease;
+  text-transform: lowercase;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', monospace;
+}
+
+.tag:hover {
+  background: rgba(255, 255, 255, 0.06);
+  opacity: 1;
+  transform: translateY(-1px);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+/* Enlace elegante - CENTRADO */
+.project-link-container {
+  margin-top: auto;
+  text-align: center;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 450;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  padding: 0.6rem 1.2rem;
+  position: relative;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  letter-spacing: 0.3px;
+}
+
+.project-link:hover {
+  gap: 0.8rem;
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.12);
+  transform: translateY(-1px);
+}
+
+.arrow {
+  transition: transform 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.project-link:hover .arrow {
+  transform: translateX(2px);
+}
+
+/* Efectos de enfoque mejorados */
+.project-card:focus-within {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Separador elegante entre secciones */
+.project-content > * + * {
+  margin-top: 1rem;
+}
+
+/* Mejoras específicas para el layout de texto */
+.project-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.project-footer {
+  margin-top: auto;
+  text-align: center;
+}
+
+/* Responsive mejorado */
+@media (max-width: 968px) {
+  .portafolio-container {
+    padding: 3rem 1.5rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+  }
+  
+  .project-content {
+    padding: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .portafolio-container {
+    padding: 2rem 1rem;
+  }
+  
+  .portafolio-header h1 {
+    font-size: 2rem;
+    letter-spacing: -0.3px;
+  }
+  
+  .portafolio-header p {
+    font-size: 1rem;
+    letter-spacing: 0.1px;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.8rem;
+  }
+  
+  .project-content {
+    padding: 1.5rem;
+    text-align: center;
+  }
+  
+  .project-image-container {
+    height: 200px;
+  }
+  
+  .project-title {
+    font-size: 1.2rem;
+  }
+  
+  .project-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 480px) {
+  .portafolio-header {
+    margin-bottom: 3rem;
+  }
+  
+  .portafolio-header h1 {
+    font-size: 1.7rem;
+  }
+  
+  .project-card {
+    max-width: 100%;
+  }
+  
+  .project-tags {
+    gap: 0.4rem;
+  }
+  
+  .tag {
+    font-size: 0.65rem;
+    padding: 0.3rem 0.6rem;
+  }
+  
+  .project-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .project-content {
+    padding: 1.2rem;
+  }
+}
+
+/* Modo oscuro optimizado */
+@media (prefers-color-scheme: dark) {
+  .project-card {
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(255, 255, 255, 0.05);
+  }
+  
+  .tag {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.08);
+  }
+  
+  .project-link {
+    background: rgba(255, 255, 255, 0.02);
+    border-color: rgba(255, 255, 255, 0.06);
+  }
+}
+
+/* Animaciones de entrada suaves */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.project-card {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.project-card:nth-child(2) { animation-delay: 0.1s; }
+.project-card:nth-child(3) { animation-delay: 0.2s; }
+.project-card:nth-child(4) { animation-delay: 0.3s; }
+
+/* Mejoras tipográficas adicionales */
+.project-title {
+  font-variant-ligatures: common-ligatures;
+  font-feature-settings: "kern", "liga", "clig", "calt";
+}
+
+.project-description {
+  font-variant-ligatures: common-ligatures;
+  font-feature-settings: "kern", "liga", "clig", "calt";
+  hyphens: auto;
+}
