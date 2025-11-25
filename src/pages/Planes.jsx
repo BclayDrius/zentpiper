@@ -139,9 +139,9 @@ function Planes() {
             <br></br>
             <button
               className="btn btn-secondary"
-              onClick={() => handleCotizar("Plan Básico")}
+             onClick={() => window.location.href = "https://cegrisa.vercel.app"}
             >
-              Demo
+              Ejemplo
             </button>
           </div>
 
@@ -173,9 +173,9 @@ function Planes() {
             <br></br>
             <button
               className="btn btn-secondary"
-              onClick={() => handleCotizar("Plan Básico")}
+              onClick={() => window.location.href = "https://limamoscow.ru/#special"}
             >
-              Demo
+              Ejemplo
             </button>
          
          
@@ -210,9 +210,9 @@ function Planes() {
             <br></br>
             <button
               className="btn btn-secondary"
-              onClick={() => handleCotizar("Plan Básico")}
+              onClick={() => window.location.href = "https://www.autonoma.pe"}
             >
-              Demo
+              Ejemplo
             </button>
           </div>
 
@@ -243,9 +243,9 @@ function Planes() {
             <br></br>
             <button
               className="btn btn-secondary"
-              onClick={() => handleCotizar("Plan Básico")}
+              onClick={() => window.location.href = "https://celestinaperu.com"}
             >
-              Demo
+              Ejemlo
             </button>
           </div>
         </div>

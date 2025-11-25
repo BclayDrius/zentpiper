@@ -112,7 +112,16 @@ function Mobile() {
         
         {/* Indicador de País Actual */}
         
+         <button
+              className="btn-Demo"
+              onClick={() => handleCotizar("Plan Básico")}
+            >
+              App Demo
+            </button>
+            <br></br>
+            <br></br>
 
+            
         <div className="mobile-services-grid">
           {/* App Android */}
           <div className="mobile-service-card">
@@ -139,12 +148,7 @@ function Mobile() {
               Contactar
             </button>
             <br></br>
-            <button
-              className="btn btn-secondary"
-              onClick={() => handleCotizar("Plan Básico")}
-            >
-              Demo
-            </button>
+           
           </div>
 
           {/* App iOS */}
@@ -173,12 +177,7 @@ function Mobile() {
               Contactar
             </button>
             <br></br>
-            <button
-              className="btn btn-secondary"
-              onClick={() => handleCotizar("Plan Básico")}
-            >
-              Demo
-            </button>
+           
           </div>
 
           {/* App Flutter - DESTACADO */}
@@ -209,12 +208,7 @@ function Mobile() {
               Contactar
             </button>
             <br></br>
-            <button
-              className="btn btn-secondary"
-              onClick={() => handleCotizar("Plan Básico")}
-            >
-              Demo
-            </button>
+           
           </div>
 
           {/* App Nativa (iOS + Android) */}
@@ -243,12 +237,7 @@ function Mobile() {
               Contactar
             </button>
             <br></br>
-            <button
-              className="btn btn-secondary"
-              onClick={() => handleCotizar("Plan Básico")}
-            >
-              Demo
-            </button>
+           
           </div>
         </div>
       </div>
