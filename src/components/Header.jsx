@@ -6,7 +6,6 @@ import "./Header.css";
 function Header() {
   const [isHeaderVisible, setIsHeaderVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [paisSeleccionado, setPaisSeleccionado] = useState("PE");
   const [isCountryDropdownOpen, setIsCountryDropdownOpen] = useState(false);
 
@@ -63,14 +62,6 @@ function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
-
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
-  };
-
   const toggleCountryDropdown = () => {
     setIsCountryDropdownOpen(!isCountryDropdownOpen);
   };
@@ -108,12 +99,6 @@ function Header() {
 
   const paisActual = paises.find(pais => pais.codigo === paisSeleccionado);
   const preciosActuales = preciosPorPais[paisSeleccionado];
-
-  // Función para formatear teléfono como enlace
-  const formatearTelefono = (telefono) => {
-    const numeroLimpio = telefono.replace(/\s/g, '');
-    return `tel:${numeroLimpio}`;
-  };
 
   // NAVEGACIÓN COMÚN
   const navegacion = (
@@ -157,9 +142,6 @@ function Header() {
 
         {/* Contacto y Country Selector */}
         <div className="header-right">
-          {/* Número de Teléfono - Solo Desktop */}
-          
-
           {/* Country Selector */}
           <div className="country-selector">
             <button 
@@ -192,61 +174,6 @@ function Header() {
             )}
           </div>
         </div>
-
-        {/* Mobile Menu Button */}
-        <button 
-          className={`mobile-menu-btn ${isMobileMenuOpen ? 'active' : ''}`}
-          onClick={toggleMobileMenu}
-          aria-label="Toggle menu"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        {/* Mobile Navigation */}
-        <div className={`mobile-nav ${isMobileMenuOpen ? 'active' : ''}`}>
-          <nav className="mobile-nav-content">
-            {navegacion}
-            
-            {/* Número de Teléfono - Mobile */}
-            <div className="mobile-phone">
-              <a 
-                href={formatearTelefono(preciosActuales.telefono)}
-                className="phone-link-mobile"
-                title={`Llamar a ${preciosActuales.telefono}`}
-              >
-                📞 {preciosActuales.telefono}
-              </a>
-            </div>
-
-            {/* Country Selector Mobile */}
-            <div className="country-selector-mobile">
-              <p className="country-selector-title">Selecciona tu país:</p>
-              <div className="country-options-mobile">
-                {paises.map((pais) => (
-                  <button
-                    key={pais.codigo}
-                    className={`country-option-mobile ${paisSeleccionado === pais.codigo ? 'selected' : ''}`}
-                    onClick={() => {
-                      seleccionarPais(pais.codigo);
-                      closeMobileMenu();
-                    }}
-                  >
-                    <span className="country-flag">{pais.bandera}</span>
-                    <span className="country-name">{pais.nombre}</span>
-                    <span className="country-currency-mobile">({preciosPorPais[pais.codigo].moneda})</span>
-                  </button>
-                ))}
-              </div>
-            </div>
-          </nav>
-        </div>
-
-        {/* Overlay */}
-        {isMobileMenuOpen && (
-          <div className="mobile-overlay" onClick={closeMobileMenu}></div>
-        )}
       </div>
     </header>
   );
