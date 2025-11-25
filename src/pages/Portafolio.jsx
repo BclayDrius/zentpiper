@@ -26,17 +26,6 @@ const projects = [
     featured: true
   },
  
-  {
-    id: 2,
-    title: 'H Y G ',
-    description: 'Pagina de administracion y control para Call Centers',
-    image: 'https://github.com/zentpiper/zentpiper/blob/main/public/HYG.png?raw=true',
-    link: 'https://ventacenter.vercel.app/home',
-    demo: 'https://ventacenter.vercel.app/home',
-    github: '',
-    tags: ['React', 'Excel', 'Json'],
-    featured: true
-  },
 ];
 
 // Componente para iconos (puedes reemplazar con tu librería de iconos preferida)
