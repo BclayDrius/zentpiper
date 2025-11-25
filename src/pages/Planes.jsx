@@ -136,6 +136,12 @@ function Planes() {
             >
               Contactar
             </button>
+            <button
+              className="btn btn-secondary"
+              onClick={() => handleCotizar("Plan Básico")}
+            >
+              Demo
+            </button>
           </div>
 
           {/* Plan Emprendedor - DESTACADO */}

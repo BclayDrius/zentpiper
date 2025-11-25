@@ -1254,7 +1254,7 @@
 }
 
 .solutions-section .btn-primary.btn-apps:hover {
-  background: linear-gradient(135deg, #ffd54f, var(--accent-color));
+  background: linear-gradient(135deg, #c7a73c, var(--accent-color));
   box-shadow: 0 8px 25px rgba(255, 193, 7, 0.7);
   transform: translateY(-3px) scale(1.05);
 }

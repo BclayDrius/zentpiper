@@ -1,4 +1,4 @@
-/* Mobile.css - Versión Profesional sin Emojis */
+/* Mobile.css - Versión 4 en Línea con Flutter Destacado */
 .mobile-services-container {
   max-width: 1400px;
   margin: 0 auto;
@@ -16,7 +16,7 @@
 
 .mobile-services-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas fijas */
   gap: 1.5rem;
   align-items: start;
 }
@@ -72,26 +72,16 @@
   z-index: 2;
 }
 
-/* Iconos profesionales con CSS */
+/* Iconos de tecnologías */
 .tech-icon {
-  width: 60px;
-  height: 60px;
-  margin: 0 auto 1.5rem;
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  font-weight: 600;
-  background: rgba(255, 193, 7, 0.1);
-  color: var(--accent-color);
-  border: 2px solid rgba(255, 193, 7, 0.2);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  opacity: 0.9;
 }
 
 /* Icono especial para Flutter destacado */
 .mobile-service-featured .tech-icon {
-  background: rgba(255, 193, 7, 0.15);
-  border-color: var(--accent-color);
+  font-size: 2.2rem;
   transform: scale(1.1);
 }
 
@@ -185,12 +175,18 @@
 }
 
 .mobile-service-details li::before {
-  content: '•';
+  content: '→';
   position: absolute;
-  left: 0.5rem;
+  left: 0;
   color: var(--accent-color);
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Items especiales para Flutter */
+.mobile-service-featured .mobile-service-details li::before {
+  content: '→'; /* Volvemos a la flecha normal */
+  color: var(--accent-color);
 }
 
 /* Botones minimalistas */
@@ -264,9 +260,7 @@
   }
   
   .tech-icon {
-    width: 50px;
-    height: 50px;
-    font-size: 1.3rem;
+    font-size: 1.8rem;
   }
   
   .mobile-service-card h3 {

@@ -93,8 +93,8 @@ function Header() {
   }, []);
 
   const paises = [
-    { codigo: "PE", nombre: "Perú", bandera: "🇵🇪" },
-    { codigo: "CL", nombre: "Chile", bandera: "🇨🇱" }
+    { codigo: "PE", nombre: "Perú",  },
+    { codigo: "CL", nombre: "Chile",  }
   ];
 
   const paisActual = paises.find(pais => pais.codigo === paisSeleccionado);
