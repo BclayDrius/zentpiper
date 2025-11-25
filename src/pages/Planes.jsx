@@ -165,11 +165,22 @@ function Planes() {
               </ul>
             </div>
             <button
-              className="btn btn-primary"
-              onClick={() => handleCotizar("Plan Emprendedor")}
+              className="btn btn-secondary"
+              onClick={() => handleCotizar("Plan Básico")}
             >
               Contactar
             </button>
+            <br></br>
+            <button
+              className="btn btn-secondary"
+              onClick={() => handleCotizar("Plan Básico")}
+            >
+              Demo
+            </button>
+         
+         
+         
+         
           </div>
 
           {/* Plan Profesional */}
@@ -192,9 +203,16 @@ function Planes() {
             </div>
             <button
               className="btn btn-secondary"
-              onClick={() => handleCotizar("Plan Profesional")}
+              onClick={() => handleCotizar("Plan Básico")}
             >
               Contactar
+            </button>
+            <br></br>
+            <button
+              className="btn btn-secondary"
+              onClick={() => handleCotizar("Plan Básico")}
+            >
+              Demo
             </button>
           </div>
 
@@ -216,11 +234,18 @@ function Planes() {
                 <li>Soporte técnico prioritario</li>
               </ul>
             </div>
-            <button
+           <button
               className="btn btn-secondary"
-              onClick={() => handleCotizar("Plan Tienda Online")}
+              onClick={() => handleCotizar("Plan Básico")}
             >
               Contactar
+            </button>
+            <br></br>
+            <button
+              className="btn btn-secondary"
+              onClick={() => handleCotizar("Plan Básico")}
+            >
+              Demo
             </button>
           </div>
         </div>

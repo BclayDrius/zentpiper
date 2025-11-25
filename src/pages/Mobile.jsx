@@ -134,9 +134,16 @@ function Mobile() {
             </div>
             <button
               className="btn btn-secondary"
-              onClick={() => handleCotizar("App Android")}
+              onClick={() => handleCotizar("Plan Básico")}
             >
               Contactar
+            </button>
+            <br></br>
+            <button
+              className="btn btn-secondary"
+              onClick={() => handleCotizar("Plan Básico")}
+            >
+              Demo
             </button>
           </div>
 
@@ -161,9 +168,16 @@ function Mobile() {
             </div>
             <button
               className="btn btn-secondary"
-              onClick={() => handleCotizar("App iOS")}
+              onClick={() => handleCotizar("Plan Básico")}
             >
               Contactar
+            </button>
+            <br></br>
+            <button
+              className="btn btn-secondary"
+              onClick={() => handleCotizar("Plan Básico")}
+            >
+              Demo
             </button>
           </div>
 
@@ -188,11 +202,18 @@ function Mobile() {
                 <li>Actualizaciones simultáneas</li>
               </ul>
             </div>
-            <button
-              className="btn btn-primary"
-              onClick={() => handleCotizar("App Flutter")}
+           <button
+              className="btn btn-secondary"
+              onClick={() => handleCotizar("Plan Básico")}
             >
               Contactar
+            </button>
+            <br></br>
+            <button
+              className="btn btn-secondary"
+              onClick={() => handleCotizar("Plan Básico")}
+            >
+              Demo
             </button>
           </div>
 
@@ -215,11 +236,18 @@ function Mobile() {
                 <li>Actualizaciones independientes</li>
               </ul>
             </div>
-            <button
+           <button
               className="btn btn-secondary"
-              onClick={() => handleCotizar("App Nativa Full")}
+              onClick={() => handleCotizar("Plan Básico")}
             >
               Contactar
+            </button>
+            <br></br>
+            <button
+              className="btn btn-secondary"
+              onClick={() => handleCotizar("Plan Básico")}
+            >
+              Demo
             </button>
           </div>
         </div>
