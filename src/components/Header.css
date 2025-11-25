@@ -387,17 +387,6 @@
   }
 }
 
-/* Ajustes para tablets en landscape */
-@media (max-width: 1024px) and (orientation: landscape) {
-  .header-content {
-    padding: 0.8rem 1.5rem;
-  }
-  
-  .nav-link {
-    padding: 0.4rem 0.9rem;
-  }
-}
-
 /* Ajustes para móviles muy pequeños */
 @media (max-width: 360px) {
   .navbar {
