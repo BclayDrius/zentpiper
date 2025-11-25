@@ -7,27 +7,27 @@ function Planes() {
   const navigate = useNavigate();
   const [paisSeleccionado, setPaisSeleccionado] = useState("PE");
   const [precios, setPrecios] = useState({
-    basico: { desarrollo: 500, mantenimiento: 240 },
-    emprendedor: { desarrollo: 900, mantenimiento: 360 },
-    profesional: { desarrollo: 1500, mantenimiento: 480 },
-    tienda: { desarrollo: 2500, mantenimiento: 700 }
+    basico: { desarrollo: 1100, mantenimiento: 200 },
+    emprendedor: { desarrollo: 2200, mantenimiento: 200 },
+    profesional: { desarrollo: 4400, mantenimiento: 200 },
+    tienda: { desarrollo: 6600, mantenimiento: 200 }
   });
 
   // Precios por país
   const preciosPorPais = {
     PE: {
       moneda: "S/",
-      basico: { desarrollo: 500, mantenimiento: 240 },
-      emprendedor: { desarrollo: 900, mantenimiento: 360 },
-      profesional: { desarrollo: 1500, mantenimiento: 480 },
-      tienda: { desarrollo: 2500, mantenimiento: 700 }
+      basico: { desarrollo: 1100, mantenimiento: 200 },
+      emprendedor: { desarrollo: 2200, mantenimiento: 200 },
+      profesional: { desarrollo: 4400, mantenimiento: 200 },
+      tienda: { desarrollo: 6600, mantenimiento: 200 }
     },
     CL: {
       moneda: "CLP$",
-      basico: { desarrollo: 150000, mantenimiento: 70000 }, // Aprox conversión
-      emprendedor: { desarrollo: 260000, mantenimiento: 110000 },
-      profesional: { desarrollo: 450000, mantenimiento: 145000 },
-      tienda: { desarrollo: 715000, mantenimiento: 210000 }
+      basico: { desarrollo: 270000, mantenimiento: 65000 }, // Aprox conversión
+      emprendedor: { desarrollo: 540000, mantenimiento: 65000 },
+      profesional: { desarrollo: 1080000, mantenimiento: 65000 },
+      tienda: { desarrollo: 1620000, mantenimiento: 65000 }
     }
   };
 
@@ -116,10 +116,10 @@ function Planes() {
           <div className="plan-card">
             <h3>Plan Básico</h3>
             <div className="plan-price">
-              {formatearPrecio(precios.basico.desarrollo)} <span>(anual)</span>
+              {formatearPrecio(precios.basico.desarrollo)} <span>(mesual)</span>
             </div>
             <div className="plan-maintenance">
-              Mantenimiento: {formatearPrecio(precios.basico.mantenimiento)}/año
+              Mantenimiento: {formatearPrecio(precios.basico.mantenimiento)}/Mes
             </div>
             <div className="plan-details">
               <ul>
@@ -150,10 +150,10 @@ function Planes() {
             <div className="plan-badge">Más Popular</div>
             <h3>Plan Emprendedor</h3>
             <div className="plan-price">
-              {formatearPrecio(precios.emprendedor.desarrollo)} <span>(anual)</span>
+              {formatearPrecio(precios.emprendedor.desarrollo)} <span>(mensual)</span>
             </div>
             <div className="plan-maintenance">
-              Mantenimiento: {formatearPrecio(precios.emprendedor.mantenimiento)}/año
+              Mantenimiento: {formatearPrecio(precios.emprendedor.mantenimiento)}/Mes
             </div>
             <div className="plan-details">
               <ul>
@@ -187,10 +187,10 @@ function Planes() {
           <div className="plan-card">
             <h3>Plan Profesional</h3>
             <div className="plan-price">
-              {formatearPrecio(precios.profesional.desarrollo)} <span>(anual)</span>
+              {formatearPrecio(precios.profesional.desarrollo)} <span>(mensual)</span>
             </div>
             <div className="plan-maintenance">
-              Mantenimiento: {formatearPrecio(precios.profesional.mantenimiento)}/año
+              Mantenimiento: {formatearPrecio(precios.profesional.mantenimiento)}/Mes
             </div>
             <div className="plan-details">
               <ul>
@@ -220,17 +220,17 @@ function Planes() {
           <div className="plan-card">
             <h3>Plan Tienda Online</h3>
             <div className="plan-price">
-              {formatearPrecio(precios.tienda.desarrollo)} <span>(anual)</span>
+              {formatearPrecio(precios.tienda.desarrollo)} <span>(mensual)</span>
             </div>
             <div className="plan-maintenance">
-              Mantenimiento: {formatearPrecio(precios.tienda.mantenimiento)}/año
+              Mantenimiento: {formatearPrecio(precios.tienda.mantenimiento)}/Mes
             </div>
             <div className="plan-details">
               <ul>
                 <li>Catálogos personalizados</li>
                 <li>Seguimiento digital al cliente</li>
                 <li>Carrito + pasarela de pago</li>
-                <li>Panel de administración simple</li>
+                <li>Panel de administración Avanzada</li>
                 <li>Soporte técnico prioritario</li>
               </ul>
             </div>
